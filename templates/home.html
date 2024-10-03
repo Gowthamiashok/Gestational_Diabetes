@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestational Diabetes Prediction</title>
+</head>
+<body>
+    <h1>Gestational Diabetes Prediction</h1>
+    <form action="/predict" method="post">
+        <!-- Input fields for features -->
+        <label for="age">Age: </label>
+        <input type="text" id="age" name="age" value="{{ age }}" required><br>
+
+        <label for="gestation">Gestation in previous pregnancy: </label>
+        <input type="text" id="gestation" name="gestation" value="{{ gestation }}" required><br>
+
+        <label for="bmi">BMI: </label>
+        <input type="text" id="bmi" name="bmi" value="{{ bmi }}" required><br>
+
+        <label for="hdl">HDL: </label>
+        <input type="text" id="hdl" name="hdl" value="{{ hdl }}" required><br>
+
+        <label for="pcos">PCOS: </label>
+        <input type="text" id="pcos" name="pcos" value="{{ pcos }}" required><br>
+
+        <label for="sys_bp">Sys BP: </label>
+        <input type="text" id="sys_bp" name="sys_bp" value="{{ sys_bp }}" required><br>
+
+        <label for="dia_bp">Dia BP: </label>
+        <input type="text" id="dia_bp" name="dia_bp" value="{{ dia_bp }}" required><br>
+
+        <label for="ogtt">OGTT: </label>
+        <input type="text" id="ogtt" name="ogtt" value="{{ ogtt }}" required><br>
+
+        <label for="hemoglobin">Hemoglobin: </label>
+        <input type="text" id="hemoglobin" name="hemoglobin" value="{{ hemoglobin }}" required><br>
+
+        <label for="prediabetes">Prediabetes: </label>
+        <input type="text" id="prediabetes" name="prediabetes" value="{{ prediabetes }}" required><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    <h2>Prediction Result:</h2>
+    <div>
+        {% if result %}
+            {{ result }}
+        {% else %}
+            No prediction yet
+        {% endif %}
+    </div>
+</body>
+</html>
